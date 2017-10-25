@@ -7,10 +7,10 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV HOME /root
 
 # Set the locale
-RUN locale-gen en_US.UTF-8  
-ENV LANG en_US.UTF-8  
-ENV LANGUAGE en_US:en  
-ENV LC_ALL en_US.UTF-8 
+RUN locale-gen en_US.UTF-8
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US:en
+ENV LC_ALL en_US.UTF-8
 
 # Use baseimage-docker's init system
 CMD ["/sbin/my_init"]
@@ -33,7 +33,6 @@ RUN add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ xenial universe
     pip install flexget && \ 
     pip install --upgrade six>=1.70 && \
     ln -sf /config /root/.flexget
-    
 
 VOLUME /config
 
