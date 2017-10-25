@@ -1,4 +1,4 @@
-FROM phusion/baseimage:0.9.16
+FROM phusion/baseimage:0.9.22
 MAINTAINER jamesgol <james@gnuinter.net>
 
 ENV DEBIAN_FRONTEND noninteractive
@@ -26,7 +26,7 @@ ADD config.yml /config.yml
 RUN add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty universe multiverse" && \
     add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty-updates universe multiverse" && \
     apt-get update -qq && \
-    apt-get install -qq --force-yes python2.7 python-dev python-pip python-transmissionrpc wget deluge && \
+    apt-get install -qq --force-yes python3 python-dev python-pip python-transmissionrpc wget deluge && \
     apt-get autoremove && \
     apt-get autoclean && \
     pip install --upgrade setuptools
