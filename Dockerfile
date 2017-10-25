@@ -25,11 +25,13 @@ ADD config.yml /config.yml
 
 RUN add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ xenial universe multiverse" && \
     add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ xenial-updates universe multiverse" && \
+    add-apt-repository "ppa:deluge-team/ppa" && \
     apt-get update -qq && \
-    apt-get install -qq --force-yes python3 python-dev python-pip python-transmissionrpc wget deluge && \
+    apt-get install -qq --force-yes python3 python3-dev python3-pip python3-transmissionrpc wget deluge && \
     apt-get autoremove && \
     apt-get autoclean && \
-    pip install --upgrade setuptools \
+    pip install --upgrade pip && \
+    pip install --upgrade setuptools && \
     pip install flexget && \ 
     pip install --upgrade six>=1.70 && \
     ln -sf /config /root/.flexget
