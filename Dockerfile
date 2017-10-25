@@ -23,8 +23,8 @@ RUN usermod -d /config nobody
 # Add default config
 ADD config.yml /config.yml
 
-RUN add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty universe multiverse" && \
-    add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty-updates universe multiverse" && \
+RUN add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ xenial universe multiverse" && \
+    add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ xenial-updates universe multiverse" && \
     apt-get update -qq && \
     apt-get install -qq --force-yes python3 python-dev python-pip python-transmissionrpc wget deluge && \
     apt-get autoremove && \
