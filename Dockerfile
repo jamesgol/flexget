@@ -29,7 +29,7 @@ RUN add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ xenial universe
     apt-get install -qq --force-yes python3 python-dev python-pip python-transmissionrpc wget deluge && \
     apt-get autoremove && \
     apt-get autoclean && \
-    pip install --upgrade setuptools
+    pip install --upgrade setuptools \
     pip install flexget && \ 
     pip install --upgrade six>=1.70 && \
     ln -sf /config /root/.flexget
